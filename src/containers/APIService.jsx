@@ -31,18 +31,30 @@ class ApiService {
             });
             console.log('response:', response);
 
-            const playersData = await response.json();
-            console.log('players:', playersData.players);
+            if (!response.ok) {
+                throw new Error('Fehler beim Abrufen der Spieler.');
+            }
 
-            const playerExists = playersData.players.some((player) => player.name.toLowerCase() === playerName.toLowerCase());
+            const playersData = await response.json();
+            console.log('playersData:', playersData);
+
+            if (!playersData || !Array.isArray(playersData.players)) {
+                throw new Error('Ungültiges Datenformat für Spielerdaten.');
+            }
+
+            const playerExists = playersData.players.some(
+                (player) => player.name.toLowerCase() === playerName.toLowerCase()
+            );
             console.log('playerExists:', playerExists);
 
             return playerExists;
         } catch (error) {
             console.error('Error in checkPlayerExists:', error);
-            throw new Error('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./checkPlayer');
+            throw new Error('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
         }
+        //debugging:With the updated code, we added checks to ensure that the playersData object exists and that the playersData.players value is an array before attempting to call the some method on it. If the checks fail, an error is thrown, indicating that the response data is in an invalid format.
     }
+
 
 
 

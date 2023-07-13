@@ -28,25 +28,28 @@ export default class PlayerContainer extends Component {
             if (playerExists) {
                 const currentPlayer = { name: playerName };
                 this.setState({ currentPlayer, showOverview: true });
+
                 const pendingGames = await ApiService.getPendingGames();
                 this.setState({ pendingGames });
+
                 // Perform any additional operations after setting the state
                 // ...
             } else {
                 const newPlayer = await ApiService.createPlayer(playerName);
                 const currentPlayer = newPlayer;
                 this.setState({ currentPlayer, showOverview: true });
+
                 const pendingGames = await ApiService.getPendingGames();
                 this.setState({ pendingGames });
+
                 // Perform any additional operations after setting the state
                 // ...
             }
         } catch (error) {
-            console.error(error);
-            alert('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
+            console.error('Error in handlePlayer:', error);
+            alert('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./handlePlayer');
         }
     };
-
 
 
 
