@@ -12,7 +12,7 @@ const Menu = () => (
     </div>
 );
 const Navbar = () => {
-    const [toggleMenu,setToggleMenu] = useState(false);
+   // const [toggleMenu,setToggleMenu] = useState(false);
     return (
         <div className='cards__navbar'>
             <div className='cards__navbar-links'>
