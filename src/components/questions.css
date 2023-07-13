@@ -1,0 +1,23 @@
+.questions-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.question-item {
+    margin-bottom: 10px;
+}
+
+.question {
+    background-color: #f0f0f0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.question.expanded {
+    background-color: #e0e0e0;
+}
+
+.answer {
+    padding: 10px;
+    background-color: #f5f5f5;
+}
