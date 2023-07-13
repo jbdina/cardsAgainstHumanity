@@ -1,5 +1,6 @@
 .CAH__header {
     display: flex;
+    align-items: center;
 }
 .CAH__header__padding{
     padding-top: 1rem;
@@ -9,10 +10,11 @@
     flex: 1;
     display:flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
     margin-right: 5rem;
     text-align: center;
+    margin: 0 auto;
 
 
 }
@@ -23,16 +25,17 @@
     line-height: 75px;
     text-align: center;
     justify-content: center;
+    margin: 0;
+    align-items: center;
 }
 @media screen and (max-width: 768px) {
     CAH__header-content h1{
-    margin-left: 2rem; /* Angepasster Wert für die linke Marge auf kleineren Bildschirmen */
+    margin-left: 2rem;
 }
 }
 
 @media screen and (max-width: 480px) {
     CAH__header-content h1{
-
     margin-left: 1rem; /* Angepasster Wert für die linke Marge auf noch kleineren Bildschirmen */
 }
 }
@@ -43,6 +46,7 @@
     line-height: 27px;
     color: black;
     margin-top: 1.5rem;
+
 }
 @media screen and (max-width: 1050px){
     .CAH__header{
