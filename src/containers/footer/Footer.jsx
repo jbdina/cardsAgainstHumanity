@@ -3,20 +3,22 @@ import './footer.css';
 
 const Footer = () => {
     return (
-        <div className="CAH__footer section__padding">
-        <div className="CAH__footer-heading">
+        <footer className="CAH__footer-section__padding">
+        <div className="CAH__footer-middle-section">
             <h1 className="gradient__text">A party game for horrible people</h1>
-            <p>This project was created at Anhalt University under the supervision of Toni Barth.</p>
+            <p className="CAH__footer-down-section">This project was created at Anhalt University under the supervision of Toni Barth. </p>
 
-             <div className="CAH__footer-content">
+            <u1 className="CAH__footer-content">
                  <p> Developer</p>
-                 <p>Jamila Gränzer		jamila.graenzer@student.hs-anhalt.de</p>
-                 <p>Leonie Weinert		leonie.weinert@student.hs-anhalt.de</p>
-                 <p>Sarina Haupt	     sarina.haupt@student.hs-anhalt.de</p>
-             </div>
-        </div>
+                 <p>Jamila Gränzer		</p>
+                 <p>Leonie Weinert		</p>
+                 <p>Sarina Haupt	    </p>
+             </u1>
+            </div>
 
-        </div>
+
+
+        </footer>
     )
 }
 

@@ -1,0 +1,15 @@
+.CAH__footer-section__padding{
+    background-color: crimson;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem 6rem;
+    color: white;
+}
+.gradient__text {
+    font-weight: 600;
+}
+.CAH__footer-down-section {
+    font-weight: 500;
+}
