@@ -52,6 +52,34 @@
     margin: 0 1rem;
     cursor: pointer;
 }
+@media screen and (max-width: 1050px){
+    .cards__navbar{
+        flex-direction: column;
+    }
+    .cards__navbar-links_container{
+        margin: 0 0 3rem;
+    }
+}
+@media screen and (max-width: 650px){
+    .cards__navbar{
+        font-size: 48px;
+        line-height: 60px;
+    }
+    .cards__navbar-links_container{
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+@media screen and (max-width: 490px){
+    .cards__navbar{
+        font-size: 36px;
+        line-height: 48px;
+    }
+    .cards__navbar-links_container{
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
 
 /*.menu {
     display: flex;

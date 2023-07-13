@@ -1,6 +1,10 @@
 .CAH__header {
     display: flex;
 }
+.CAH__header__padding{
+    padding-top: 1rem;
+    align-items: center;
+}
 .CAH__header-content{
     flex: 1;
     display:flex;
@@ -8,19 +12,36 @@
     align-items: flex-start;
     flex-direction: column;
     margin-right: 5rem;
+    text-align: center;
+
+
 }
 .CAH__header-content h1 {
     font-family: "Courier New";
     font-weight: 800;
     font-size: 62px;
     line-height: 75px;
+    text-align: center;
+    justify-content: center;
+}
+@media screen and (max-width: 768px) {
+    CAH__header-content h1{
+    margin-left: 2rem; /* Angepasster Wert für die linke Marge auf kleineren Bildschirmen */
+}
+}
+
+@media screen and (max-width: 480px) {
+    CAH__header-content h1{
+
+    margin-left: 1rem; /* Angepasster Wert für die linke Marge auf noch kleineren Bildschirmen */
+}
 }
 .CAH__header-content p {
     font-style: normal;
     font-weight: normal;
     font-size: 20px;
     line-height: 27px;
-    color: #81AFDD;
+    color: black;
     margin-top: 1.5rem;
 }
 @media screen and (max-width: 1050px){

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Questions.css';
+import './questions.css';
 
 const Questions = () => {
     const [expandedQuestion, setExpandedQuestion] = useState(null);
@@ -7,18 +7,18 @@ const Questions = () => {
     const questions = [
         {
             id: 1,
-            question: 'Frage 1',
-            answer: 'Antwort auf Frage 1.'
+            question: 'How do I join a game?',
+            answer: 'Just enter your name and select “find lobby” to join an existing game or “create new lobby” to create your own.'
         },
         {
             id: 2,
-            question: 'Frage 2',
-            answer: 'Antwort auf Frage 2.'
+            question: 'Can I invite my friends?',
+            answer: 'They can join you by searching for your group after you created one.'
         },
         {
             id: 3,
-            question: 'Frage 3',
-            answer: 'Antwort auf Frage 3.'
+            question: 'How can I choose the card decks?',
+            answer: 'By default, all decks are enabled. A feature to choose specific card decks will be implemented later.'
         }
     ];
 
