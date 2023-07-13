@@ -14,3 +14,7 @@ code {
 .h1 {
   text-align: center;
 }
+
+:root {
+  --font-family: 'Manrope', sans-serif;
+}

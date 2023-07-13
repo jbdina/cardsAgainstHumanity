@@ -24,11 +24,12 @@ const Navbar = () => {
                     <img src={logo} alt="logo"/>
                 </div>
                 <div className='cards__navbar-links_container'>
-                    <p><a href="#about">About</a></p>
-                    <p><a href="#cardsagainsthumanity">Cards Against Humanity</a></p>
-                    <p><a href="#help">Help</a></p>
+                    <p><a id="#about">About</a></p>
+                    <p><a id="#cardsagainsthumanity">Cards Against Humanity</a></p>
+                    <p><a id="#help">Help</a></p>
                 </div>
             </div>
+
 
 
 
