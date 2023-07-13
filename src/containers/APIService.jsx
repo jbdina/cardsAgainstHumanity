@@ -16,7 +16,28 @@ class ApiService {
             throw new Error('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./pendingGames');
         }
     }
+// Creates a new game
+    async createGame(ownerId) {
+        try {
+            const response = await fetch(`${this.BASE_URL}/games/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ owner: ownerId }),
+            });
 
+            if (response.ok) {
+                const data = await response.json();
+                return data;
+            } else {
+                throw new Error('Fehler beim Erstellen des Spiels.');
+            }
+        } catch (error) {
+            console.error(error);
+            throw new Error('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./createGame');
+        }
+    }
     // Checks if a player exists
     async checkPlayerExists(playerName) {
         try {

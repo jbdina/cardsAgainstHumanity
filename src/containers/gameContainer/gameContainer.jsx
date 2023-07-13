@@ -9,6 +9,7 @@ export default class GameContainer extends Component {
             running: false,
             showLobby: false,
             selectedGameId: null, // Track the selected game ID
+            currentGame: null, // Add currentGame state
         };
     }
     handleJoinGame = (gameId) => {
@@ -31,6 +32,20 @@ export default class GameContainer extends Component {
         }else{
             alert('Du brauchst mindestens 3 Mitspieler, um das Spiel starten zu können.');
                 //return;
+        }
+    };
+    handleNewGame = async () => {
+        const { currentPlayer } = this.props;
+
+        try {
+            // Create a new game using the API
+            const newGame = await ApiService.createGame(currentPlayer.id);
+
+            // Update the state with the new game data and show the lobby view
+            this.setState({ currentGame: newGame, showLobby: true });
+        } catch (error) {
+            console.error('Error in handleNewGame:', error);
+            alert('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./handleNewGame');
         }
     };
 
@@ -76,11 +91,22 @@ export default class GameContainer extends Component {
                 );
             }
             if (showLobby === true) {
+                // Check if the current player is the owner of the game
+                const isOwner = this.state.currentGame && this.state.currentGame.owner && this.state.currentGame.owner.id === currentPlayer.id;
+
                 return (
                     <div>
                         {/* Render the lobby view */}
                         <h2>Lobby</h2>
+
                         {/* Display pending games and join/create game options */}
+                        {this.state.currentGame && isOwner && (
+                            <div>
+                                <p>Du hast ein Spiel erstellt!</p>
+                                <p>Warte auf mindestens zwei weitere Spieler, um das Spiel zu starten.</p>
+                            </div>
+                        )}
+
                         {/* Implement the logic to join or create games */}
                         <button onClick={this.handleGameStart}>Start Game</button>
                     </div>
@@ -91,10 +117,8 @@ export default class GameContainer extends Component {
                         {/* Render the game overview */}
                         {this.handleOverview()}
                         {/* Add a "Neues Spiel starten" button */}
-                        <button onClick={() => {
-                            // add code here to handle starting a new game
-                        }}>Neues Spiel erstellen
-                        </button>
+                        <button onClick={this.handleNewGame}>Spiel erstellen</button>
+
                     </div>
                 );
             }
