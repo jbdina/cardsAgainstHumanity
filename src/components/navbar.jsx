@@ -1,14 +1,23 @@
 import React from 'react'
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css'
-import logo from "../../"
+import logo from "../../src/assets/hslogo.jpg"
 
+const Menu = () => {
+    <>
+    <p><a href="#about">About</a></p>
+
+    </>
+}
 const Navbar = () => {
     return (
-        <div className='navbar'>
-            <div className='navbar-links'>
-                <div className='navbar-links_logo'>
+        <div className='cards__navbar'>
+            <div className='cards__navbar-links'>
+                <div className='cards__navbar-links_logo'>
                     <img src={logo} alt="logo"/>
+                </div>
+                <div className='cards__navbar_navbar-links-container'>
+                    <Menu/>
                 </div>
             </div>
         </div>
