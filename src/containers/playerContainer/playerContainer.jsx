@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { GameContainer, ApiService } from '../index';
+import React, {Component} from 'react';
+import {ApiService, GameContainer} from '../index';
+import './playerContainer.css';
 
 export default class PlayerContainer extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ export default class PlayerContainer extends Component {
         };
     }
 
+
     handlePlayer = async () => {
         const { playerName } = this.state;
 
@@ -20,48 +22,65 @@ export default class PlayerContainer extends Component {
             return;
         }
 
-        let currentPlayer = null;
-        const playerExists = await ApiService.checkPlayerExists(playerName);
-
-        if (playerExists) {
-            currentPlayer = { name: playerName };
-        } else {
-            const newPlayer = await ApiService.createPlayer(playerName);
-            currentPlayer = newPlayer;
-        }
-
-        this.setState({ currentPlayer, showOverview: true });
-        this.loadPendingGames();
-    };
-
-    loadPendingGames = async () => {
         try {
-            const pendingGames = await ApiService.getPendingGames();
-            this.setState({ pendingGames });
+            const playerExists = await ApiService.checkPlayerExists(playerName);
+
+            if (playerExists) {
+                const currentPlayer = { name: playerName };
+                this.setState({ currentPlayer, showOverview: true });
+                const pendingGames = await ApiService.getPendingGames();
+                this.setState({ pendingGames });
+                // Perform any additional operations after setting the state
+                // ...
+            } else {
+                const newPlayer = await ApiService.createPlayer(playerName);
+                const currentPlayer = newPlayer;
+                this.setState({ currentPlayer, showOverview: true });
+                const pendingGames = await ApiService.getPendingGames();
+                this.setState({ pendingGames });
+                // Perform any additional operations after setting the state
+                // ...
+            }
         } catch (error) {
             console.error(error);
             alert('Ein Fehler ist aufgetreten. Bitte versuche es später erneut.');
         }
     };
 
+
+
+
     handleInputChange = (event) => {
         this.setState({ playerName: event.target.value });
     };
 
+    handleDeletePlayers = () => {
+        ApiService.deletePlayersByName('9');
+        ApiService.deletePlayersByName('8');
+        ApiService.deletePlayersByName('7');
+        ApiService.deletePlayersByName('6');
+        ApiService.deletePlayersByName('5');
+        ApiService.deletePlayersByName('4');
+        ApiService.deletePlayersByName('3');
+        ApiService.deletePlayersByName('2');
+        ApiService.deletePlayersByName('0');
+    };
     render() {
         const { playerName, currentPlayer, showOverview, pendingGames } = this.state;
 
         if (currentPlayer && showOverview) {
-            return <GameContainer currentPlayer={currentPlayer} pendingGames={pendingGames} />;
+            return <GameContainer currentPlayer={currentPlayer}  showOverview={showOverview} pendingGames={pendingGames} />;
         }
 
         return (
+
             <div>
                 <label>
                     Dein Name:
                     <input type="text" value={playerName} onChange={this.handleInputChange} />
                 </label>
                 <button onClick={this.handlePlayer}>Spielsuche</button>
+                <button onClick={this.handleDeletePlayers}>Spieler löschen</button>
             </div>
             
 
