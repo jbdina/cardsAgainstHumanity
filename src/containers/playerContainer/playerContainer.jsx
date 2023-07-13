@@ -69,6 +69,7 @@ export default class PlayerContainer extends Component {
         ApiService.deletePlayersByName('0');
     };
     render() {
+
         const { playerName, currentPlayer, showOverview, pendingGames } = this.state;
 
         if (currentPlayer && showOverview) {
@@ -77,7 +78,7 @@ export default class PlayerContainer extends Component {
 
         return (
 
-            <div>
+            <div id="player-container">
                 <label>
                     Dein Name:
                     <input type="text" value={playerName} onChange={this.handleInputChange} />
@@ -85,7 +86,7 @@ export default class PlayerContainer extends Component {
                 <button onClick={this.handlePlayer}>Spielsuche</button>
                 <button onClick={this.handleDeletePlayers}>Spieler löschen</button>
             </div>
-            
+
 
         );
     }

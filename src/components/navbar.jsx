@@ -24,9 +24,9 @@ const Navbar = () => {
                     <img src={logo} alt="logo"/>
                 </div>
                 <div className='cards__navbar-links_container'>
-                    <p><a id="#about">About</a></p>
-                    <p><a id="#cardsagainsthumanity">Cards Against Humanity</a></p>
-                    <p><a id="#help">Help</a></p>
+                    <p><a href="#about">About</a></p>
+                    <p><a href="#player-container">Cards Against Humanity</a></p>
+                    <p><a href="#questions">Help</a></p>
                 </div>
             </div>
 

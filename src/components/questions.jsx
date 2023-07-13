@@ -31,7 +31,7 @@ const Questions = () => {
     };
 
     return (
-        <div className="questions-container">
+        <div className="questions-container" id="questions">
             {questions.map((q) => (
                 <div key={q.id} className="question-item">
                     <div

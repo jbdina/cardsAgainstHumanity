@@ -8,8 +8,11 @@
     color: white;
 }
 .gradient__text {
-    font-weight: 600;
+    font-weight: 700;
 }
 .CAH__footer-down-section {
     font-weight: 500;
+}
+.CAH__footer-content-dev{
+    font-weight: 700;
 }
