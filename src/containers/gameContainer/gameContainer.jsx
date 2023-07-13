@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import  ApiService  from '../APIService';
+import './gameContainer.css';
 
 export default class GameContainer extends Component {
     constructor(props) {
@@ -7,9 +8,15 @@ export default class GameContainer extends Component {
         this.state = {
             running: false,
             showLobby: false,
+            selectedGameId: null, // Track the selected game ID
         };
     }
-
+    handleJoinGame = (gameId) => {
+        // Handle the logic to join the game using the game ID
+        // You can make an API call or update the state accordingly
+        // For simplicity, let's just set the selectedGameId in the state for now
+        this.setState({ selectedGameId: gameId });
+    };
     handleGameStart = () => {
         const { currentPlayer } = this.props;
 
@@ -27,25 +34,34 @@ export default class GameContainer extends Component {
         }
     };
 
-    handleOverview=  () =>{
+    handleOverview = () => {
         const { pendingGames } = this.props;
+        const { selectedGameId } = this.state;
 
         if (pendingGames && pendingGames.length > 0) {
-            // display the pending games in a grid
+            // Display the pending games in a grid
             return (
                 <div className="grid-container">
-                    {pendingGames.map(game => (
-                        <div className="grid-item" key={game.id}>
-                            {game.name} ({game.players.length} Spieler)
+                    {pendingGames.map((game) => (
+                        <div
+                            className={`grid-item ${selectedGameId === game.id ? 'selected' : ''}`}
+                            key={game.id}
+                            onClick={() => this.handleJoinGame(game.id)}
+                        >
+                            <div className="game-info">
+                                <div>{game.name}</div>
+                                <div>({game.players.length} Spieler)</div>
+                                <div className="waiting-message">Wartet auf Mitspieler</div>
+                            </div>
                         </div>
                     ))}
                 </div>
+
             );
         } else {
-            // display a message saying that there are no games waiting for a player
+            // Display a message saying that there are no games waiting for a player
             return <div>Es gibt derzeit keine Spiele, die auf einen Spieler warten.</div>;
         }
-
     };
 
     render() {

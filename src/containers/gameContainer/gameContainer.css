@@ -1,0 +1,18 @@
+.grid-item {
+    /* Add other styling properties */
+    margin: 4%;
+    border: 1px solid black;
+}
+
+.selected {
+    /* Define the style for the selected grid item */
+    background-color: yellow;
+}
+
+.game-info {
+    /* Add styling properties for the game information */
+}
+
+.waiting-message {
+    /* Add styling properties for the waiting message */
+}

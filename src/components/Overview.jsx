@@ -3,6 +3,7 @@ import React from 'react'
 import Navbar from './navbar';
 import Footer from '../containers/footer/Footer';
 import Header from '../containers/header/header';
+import {PlayerContainer, GameContainer} from "../containers/index";
 
 const Overview = () => {
 
@@ -10,6 +11,8 @@ const Overview = () => {
             <div>
             <Navbar />,
             <Header />,
+                <PlayerContainer />,
+                <GameContainer />
             <Footer />
 
         </div>
