@@ -30,7 +30,17 @@
 .cards__navbar-links_container {
     display: flex;
     flex-direction: row;
-    color: white;
+}
+.cards__navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.cards__navbar-links_container p,
+.cards__navbar-sign p,
+.cards__navbar-menu_container p {
+    color: #fff;
+    font-family: var(--font-family);
 }
 
 .menu {
@@ -39,6 +49,6 @@
 
 }
 .menu p {
-    margin-left: 10rem;
+    margin-left: 1rem;
     color: white;
 }
