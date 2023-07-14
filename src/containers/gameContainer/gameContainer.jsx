@@ -103,7 +103,7 @@ export default class GameContainer extends Component {
                         {this.state.currentGame && isOwner && (
                             <div>
                                 <p>You created a game!</p>
-                                <p>Wait for at least three more player.</p>
+                                <p>Wait for at least three more players.</p>
                             </div>
                         )}
 
