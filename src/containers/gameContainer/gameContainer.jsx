@@ -65,8 +65,8 @@ export default class GameContainer extends Component {
                         >
                             <div className="game-info">
                                 <div>{game.name}</div>
-                                <div>({game.players.length} Spieler)</div>
-                                <div className="waiting-message">Wartet auf Mitspieler</div>
+                                <div>({game.players.length} Players)</div>
+                                <div className="waiting-message">Waiting for Players</div>
                             </div>
                         </div>
                     ))}
@@ -75,7 +75,7 @@ export default class GameContainer extends Component {
             );
         } else {
             // Display a message saying that there are no games waiting for a player
-            return <div>Es gibt derzeit keine Spiele, die auf einen Spieler warten.</div>;
+            return <div>There are no Games waiting for Players.</div>;
         }
     };
 
@@ -102,8 +102,8 @@ export default class GameContainer extends Component {
                         {/* Display pending games and join/create game options */}
                         {this.state.currentGame && isOwner && (
                             <div>
-                                <p>Du hast ein Spiel erstellt!</p>
-                                <p>Warte auf mindestens zwei weitere Spieler, um das Spiel zu starten.</p>
+                                <p>You created a game!</p>
+                                <p>Wait for at least three more player.</p>
                             </div>
                         )}
 
@@ -117,7 +117,7 @@ export default class GameContainer extends Component {
                         {/* Render the game overview */}
                         {this.handleOverview()}
                         {/* Add a "Neues Spiel starten" button */}
-                        <button onClick={this.handleNewGame}>Spiel erstellen</button>
+                        <button onClick={this.handleNewGame}>Create New Game</button>
 
                     </div>
                 );
