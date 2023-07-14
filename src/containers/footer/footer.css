@@ -17,29 +17,29 @@
     font-weight: 700;
 }
 @media screen and (max-width: 1050px){
-    .CAH__footer-section__padding{
+    .CAH__footer-middle-section{
         flex-direction: column;
     }
-    .gradient__text{
+    .CAH__footer-middle-section{
         margin: 0 0 3rem;
     }
 }
 @media screen and (max-width: 650px){
-    .CAH__footer-section__padding{
+    .CAH__footer-middle-section{
         font-size: 48px;
         line-height: 60px;
     }
-    .gradient__text{
+    .CAH__footer-middle-section{
         font-size: 16px;
         line-height: 24px;
     }
 }
 @media screen and (max-width: 490px){
-    .CAH__footer-section__padding{
+    .CAH__footer-middle-section{
         font-size: 36px;
         line-height: 48px;
     }
-    .gradient__text{
+    .CAH__footer-middle-section{
         font-size: 14px;
         line-height: 24px;
     }

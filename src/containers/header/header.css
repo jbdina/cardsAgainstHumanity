@@ -5,6 +5,9 @@
 .CAH__header__padding{
     padding-top: 1rem;
     align-items: center;
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
 }
 .CAH__header-content{
     flex: 1;
