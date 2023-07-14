@@ -140,8 +140,8 @@ export default class PlayerContainer extends Component {
                 </label>
                 <button onClick={this.handlePlayer}>Search Game</button>
 
-                <button /*zum Testen exklusiv*/ onClick={this.handleDeletePlayers}>Spieler löschen</button>
-                <button /*zum Testen exklusiv*/ onClick={this.handleDeleteGames}>Spiele löschen</button>
+                <button /*zum Testen exklusiv*/ onClick={this.handleDeletePlayers}>delete player</button>
+                <button /*zum Testen exklusiv*/ onClick={this.handleDeleteGames}>delete game</button>
             </div>
 
 
