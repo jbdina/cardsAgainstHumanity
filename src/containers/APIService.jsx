@@ -121,13 +121,33 @@ class ApiService {
             throw new Error('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./getPlayer');
         }
     }
+    //Zum Testen
+    async deleteGame(gameId){
+        try{
+            //delete game with id
+            const response = await fetch(`${this.BASE_URL}/games/${gameId}/`,{
+                method:'DELETE',
+                headers:{
+                    'Content-Type' : 'application/json',
+                },
+            });
+
+        }catch (e) {
+                throw new Error('Error /deletegame');
+        }
+    }
     //zum Testen
     async deletePlayersByName(playerId) {
         try {
             // get all players
-            const response = await fetch(`${this.BASE_URL}/players/${playerId}/`);
+            const response = await fetch(`${this.BASE_URL}/players/${playerId}/`, {
+                method:'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
             if (response.ok) {
-                const data = await response.json();
+               /* const data = await response.json();
                 const players = data.players;
 
                 // find players with the given name
@@ -135,10 +155,10 @@ class ApiService {
 
                 // delete each player
                 for (const player of playersToDelete) {
-                    await this.deletePlayer(player.id);
-                }
+                    await this.deletePlayer(player.id);*/
+                return;
             } else {
-                throw new Error('Fehler beim Abrufen der Spieler.');
+                throw new Error('Error /delete Player.');
             }
         } catch (error) {
             console.error(error);

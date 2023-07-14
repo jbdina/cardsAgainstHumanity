@@ -58,6 +58,26 @@ export default class PlayerContainer extends Component {
     };
 
     handleDeletePlayers = () => {
+        ApiService.deletePlayersByName('29');
+        ApiService.deletePlayersByName('28');
+        ApiService.deletePlayersByName('27');
+        ApiService.deletePlayersByName('26');
+        ApiService.deletePlayersByName('25');
+        ApiService.deletePlayersByName('24');
+        ApiService.deletePlayersByName('23');
+        ApiService.deletePlayersByName('22');
+        ApiService.deletePlayersByName('21');
+        ApiService.deletePlayersByName('20');
+        ApiService.deletePlayersByName('19');
+        ApiService.deletePlayersByName('18');
+        ApiService.deletePlayersByName('17');
+        ApiService.deletePlayersByName('16');
+        ApiService.deletePlayersByName('15');
+        ApiService.deletePlayersByName('14');
+        ApiService.deletePlayersByName('13');
+        ApiService.deletePlayersByName('12');
+        ApiService.deletePlayersByName('11');
+        ApiService.deletePlayersByName('10');
         ApiService.deletePlayersByName('9');
         ApiService.deletePlayersByName('8');
         ApiService.deletePlayersByName('7');
@@ -66,7 +86,42 @@ export default class PlayerContainer extends Component {
         ApiService.deletePlayersByName('4');
         ApiService.deletePlayersByName('3');
         ApiService.deletePlayersByName('2');
+        ApiService.deletePlayersByName('1');
         ApiService.deletePlayersByName('0');
+
+    };
+    handleDeleteGames = () => {
+        ApiService.deleteGame('29');
+        ApiService.deleteGame('28');
+        ApiService.deleteGame('27');
+        ApiService.deleteGame('26');
+        ApiService.deleteGame('25');
+        ApiService.deleteGame('24');
+        ApiService.deleteGame('23');
+        ApiService.deleteGame('22');
+        ApiService.deleteGame('21');
+        ApiService.deleteGame('20');
+        ApiService.deleteGame('19');
+        ApiService.deleteGame('18');
+        ApiService.deleteGame('17');
+        ApiService.deleteGame('16');
+        ApiService.deleteGame('15');
+        ApiService.deleteGame('14');
+        ApiService.deleteGame('13');
+        ApiService.deleteGame('12');
+        ApiService.deleteGame('11');
+        ApiService.deleteGame('10');
+        ApiService.deleteGame('9');
+        ApiService.deleteGame('8');
+        ApiService.deleteGame('7');
+        ApiService.deleteGame('6');
+        ApiService.deleteGame('5');
+        ApiService.deleteGame('4');
+        ApiService.deleteGame('3');
+        ApiService.deleteGame('2');
+        ApiService.deleteGame('1');
+        ApiService.deleteGame('0');
+
     };
     render() {
 
@@ -78,12 +133,15 @@ export default class PlayerContainer extends Component {
 
         return (
 
-            <div id="player-container">
+            <div className="player-container full-height" id={"player-container"}>
                 <label >
                     Enter your Name :
                     <input type="text" value={playerName} onChange={this.handleInputChange} />
                 </label>
                 <button onClick={this.handlePlayer}>Search Game</button>
+
+                <button /*zum Testen exklusiv*/ onClick={this.handleDeletePlayers}>Spieler löschen</button>
+                <button /*zum Testen exklusiv*/ onClick={this.handleDeleteGames}>Spiele löschen</button>
             </div>
 
 
