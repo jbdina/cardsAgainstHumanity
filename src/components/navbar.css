@@ -2,8 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 2rem 6rem;
+    margin-left: 5%;
+    margin-right: 10%;
+    position: relative; /* Add this line to make the container relative */
+}
+
+.cah__navbar:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
 }
 
 .cah__navbar-links {
@@ -15,11 +27,11 @@
 
 .cah__navbar-links_logo {
     margin-right: 2rem;
-    height: 50px;
+    height: 70px;
 }
 
 .cah__navbar-links_logo img {
-    height: 50px;
+    height: 70px;
 }
 
 .cah__navbar-links_container {
