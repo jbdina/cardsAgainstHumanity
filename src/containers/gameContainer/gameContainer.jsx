@@ -30,7 +30,7 @@ export default class GameContainer extends Component {
             ownedGame.start();
             this.setState({ running: true });
         }else{
-            alert('Du brauchst mindestens 3 Mitspieler, um das Spiel starten zu können.');
+            alert('You need at least three players to start the game.');
                 //return;
         }
     };

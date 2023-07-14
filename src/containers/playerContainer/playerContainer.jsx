@@ -18,7 +18,7 @@ export default class PlayerContainer extends Component {
         const { playerName } = this.state;
 
         if (!playerName) {
-            alert('Bitte gib deinen Namen ein.');
+            alert('Please enter your name.');
             return;
         }
 
@@ -47,7 +47,7 @@ export default class PlayerContainer extends Component {
             }
         } catch (error) {
             console.error('Error in handlePlayer:', error);
-            alert('Ein Fehler ist aufgetreten. Bitte versuche es später erneut./handlePlayer');
+            alert('Error Occured./handlePlayer');
         }
     };
 
