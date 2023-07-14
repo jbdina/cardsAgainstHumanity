@@ -79,8 +79,8 @@ export default class PlayerContainer extends Component {
         return (
 
             <div id="player-container">
-                <label>
-                    Dein Name:
+                <label >
+                    Dein Name :
                     <input type="text" value={playerName} onChange={this.handleInputChange} />
                 </label>
                 <button onClick={this.handlePlayer}>Spielsuche</button>
