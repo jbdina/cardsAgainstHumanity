@@ -138,7 +138,9 @@ export default class PlayerContainer extends Component {
                     Enter your Name :
                     <input type="text" value={playerName} onChange={this.handleInputChange} />
                 </label>
-                <button onClick={this.handlePlayer}>Search Game</button>
+                <button className={`button-glow`} onClick={this.handlePlayer}>
+                    Search Game
+                </button>
 
                 <button /*zum Testen exklusiv*/ onClick={this.handleDeletePlayers}>delete player</button>
                 <button /*zum Testen exklusiv*/ onClick={this.handleDeleteGames}>delete game</button>

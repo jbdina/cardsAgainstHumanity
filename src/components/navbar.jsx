@@ -1,39 +1,54 @@
-import React from 'react'
-//import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
+import React, { useState } from 'react'
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css'
-import logo from "../../src/assets/hslogo.jpg"
+import logo from "./../assets/hslogo.jpg"
 
-/*const Menu = () => (
-    <div className="menu">
-         <p><a href="#about">About</a></p>
-         <p><a href="#cardsAgainstHumanity">Cards Against Humanity</a></p>
-         <p><a href="#help">Help</a></p>
+const Menu = () => (
+    <>
+        <p><a className="rainbow-text" href="#about">About</a></p>
+        <p><a className="rainbow-text" href="#player-container">Cards Against Humanity</a></p>
+    </>
 
-    </div>
-);
-
- */
-
+)
 
 const Navbar = () => {
-   // const [toggleMenu,setToggleMenu] = useState(false);
+    //Boolean um
+    const [toggleMenu, setToggleMenu] = useState(false);
     return (
-        <div className='cards__navbar'>
-            <div className='cards__navbar-links'>
-                <div className='cards__navbar-links_logo'>
-                    <img src={logo} alt="logo"/>
+        /* Aufbau des Menüs für breite Bildschirme */
+        <div className='cah__navbar'>
+            <div className='cah__navbar-links'>
+                <div className='cah__navbar-links_logo'>
+                    <img src={logo} alt="logo" />
                 </div>
-                <div className='cards__navbar-links_container'>
-                    <p><a href="#about">About</a></p>
-                    <p><a href="#player-container">Cards Against Humanity</a></p>
-                    <p><a href="#questions">Help</a></p>
+                <div className='cah__navbar-links_container'>
+                    <Menu/>
                 </div>
             </div>
-
-
-
-
+            <div className='cah__navbar-help rainbow-text'>
+                <p><a href="#questions">Help</a></p>
+            </div>
+            {/* Aufbau des Menüs für schmale Bildschirme */}
+            <div className='cah__navbar-menu'>
+                {toggleMenu
+                    /* wenn das Mobile-Menü verwendet wird, öffne/schließe Menü onClick und wechsle zwischen den Menü-Icons*/
+                    ? <RiCloseLine color="#ECE5F0" size={27} onClick={() => setToggleMenu(false)} />
+                    : <RiMenu3Line color="#ECE5F0" size={27} onClick={() => setToggleMenu(true)} />
+                }
+                {/* toggleMenu auf true gesetzt wurde und wum__navbar-menu display != none, öffne das Menü mit Animation*/}
+                {toggleMenu && (
+                    <div className='cah__navbar-menu_container scale-up-center'>
+                        <div className='cah__navbar-menu_container-links'>
+                            <Menu/>
+                        </div>
+                        <div className='cah__navbar-menu_container-links-help rainbow-text'>
+                            <p><a href="#questions">Help</a></p>
+                        </div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
+
 export default Navbar
