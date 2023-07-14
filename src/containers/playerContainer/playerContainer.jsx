@@ -84,7 +84,6 @@ export default class PlayerContainer extends Component {
                     <input type="text" value={playerName} onChange={this.handleInputChange} />
                 </label>
                 <button onClick={this.handlePlayer}>Spielsuche</button>
-                <button onClick={this.handleDeletePlayers}>Spieler löschen</button>
             </div>
 
 
