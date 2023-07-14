@@ -65,7 +65,7 @@
     margin: 0 1rem;
     cursor: pointer;
     background: linear-gradient(to right, #e3e3e3, #e8e8e8, #ededed, #f2f2f2);
-    background-clip: text;
+    -background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: background 0.3s ease-in-out;
@@ -76,7 +76,7 @@
 
 .cards__navbar-links_container p:hover {
     background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
-    background-clip: text;
+    -background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
