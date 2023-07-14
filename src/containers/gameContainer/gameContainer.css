@@ -19,3 +19,39 @@
 .div{
     width: 60%;
 }
+.game-Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Remove the height property */
+    position: relative;
+}
+
+/* Add the full-height class */
+.full-height {
+    height: 100vh; /* Set the height to 100 viewport height */
+}.game-Container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     position: relative;
+ }
+
+.game-Container::before,
+.game-Container::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+}
+
+.game-Container::before {
+    top: 0;
+}
+
+.game-Container::after {
+    bottom: 0;
+}

@@ -95,7 +95,7 @@ export default class GameContainer extends Component {
                 const isOwner = this.state.currentGame && this.state.currentGame.owner && this.state.currentGame.owner.id === currentPlayer.id;
 
                 return (
-                    <div>
+                    <div className={'game-Container full-height'}>
                         {/* Render the lobby view */}
                         <h2>Lobby</h2>
 
@@ -113,7 +113,7 @@ export default class GameContainer extends Component {
                 );
             } else {
                 return (
-                    <div>
+                    <div className={'game-Container full-height'}>
                         {/* Render the game overview */}
                         {this.handleOverview()}
                         {/* Add a "Neues Spiel starten" button */}
