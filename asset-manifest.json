@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/cardsAgainstHumanity/static/css/main.189b77d6.css",
-    "main.js": "/cardsAgainstHumanity/static/js/main.9591854d.js",
+    "main.css": "/cardsAgainstHumanity/static/css/main.b6055fff.css",
+    "main.js": "/cardsAgainstHumanity/static/js/main.2fbb2fac.js",
     "static/media/hslogo.jpg": "/cardsAgainstHumanity/static/media/hslogo.812da250b358406042b4.jpg",
     "index.html": "/cardsAgainstHumanity/index.html",
-    "main.189b77d6.css.map": "/cardsAgainstHumanity/static/css/main.189b77d6.css.map",
-    "main.9591854d.js.map": "/cardsAgainstHumanity/static/js/main.9591854d.js.map"
+    "main.b6055fff.css.map": "/cardsAgainstHumanity/static/css/main.b6055fff.css.map",
+    "main.2fbb2fac.js.map": "/cardsAgainstHumanity/static/js/main.2fbb2fac.js.map"
   },
   "entrypoints": [
-    "static/css/main.189b77d6.css",
-    "static/js/main.9591854d.js"
+    "static/css/main.b6055fff.css",
+    "static/js/main.2fbb2fac.js"
   ]
 }
